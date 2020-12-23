@@ -1,8 +1,9 @@
 
-import java.util.ArrayList; 
-import java.util.Collections; 
-import java.util.Arrays; 
-import java.util.Random;
+import java.util.*; 
+// import java.util.List;
+// import java.util.Collections; 
+// import java.util.Arrays; 
+// import java.util.Random;
 
 public class PuzzleJava {
     public static ArrayList<Integer> sumAndGreaterThan10(int[] arr){
@@ -33,18 +34,20 @@ public class PuzzleJava {
     }
     System.out.println(Arrays.asList(newArr));
     }
+    public static boolean isVowel(char c) {
+        return "AEIOUaeiou".indexOf(c) != -1;
+        }
     public static void alphabetPuzzle(){
         ArrayList<Character> alphabet = new ArrayList<Character>();
-        for(Character ch = 'a'; ch <= 'z'; ch++){
+        for(Character ch = 'A'; ch <= 'Z'; ch++){
             alphabet.add(ch);
             }
             Collections.shuffle(alphabet);
             System.out.println(alphabet.get(25));
-            if (alphabet.get(0).equals('a') || alphabet.get(0).equals('e') || alphabet.get(0).equals('i') || alphabet.get(0).equals('o') || alphabet.get(0).equals('u')) {
-                System.out.println(alphabet.get(0) + " is a vowel!");
-            }else{
-                System.out.println(alphabet.get(0));
-            }
+            System.out.println(alphabet.get(0));
+        if (isVowel(alphabet.get(0))){
+            System.out.println("It is a vowel");
+        }
     }
     
     public static int[] randomIntArr(int a, int b){
@@ -88,14 +91,14 @@ public class PuzzleJava {
 
 
     public static void main(String[] args){
-    int[] y = {3,5,1,2,7,9,8,13,25,32};
-    String[] names = {"Nancy", "Jinichi", "Fujibayashi", "Momochi", "Ishikawa"};
-System.out.println(sumAndGreaterThan10(y));
-shuffleLessThanFive(names); 
+//     int[] y = {3,5,1,2,7,9,8,13,25,32};
+//     String[] names = {"Nancy", "Jinichi", "Fujibayashi", "Momochi", "Ishikawa"};
+// System.out.println(sumAndGreaterThan10(y));
+// shuffleLessThanFive(names); 
 alphabetPuzzle();
-randomIntArr(55, 100);
-sortArray(randomIntArr(55,100));
-System.out.println(generateRandomChars("abcdefghijklmnopqrstuvwxyz0123456789", 5));
-randStringArray(10);
+// randomIntArr(55, 100);
+// sortArray(randomIntArr(55,100));
+// System.out.println(generateRandomChars("abcdefghijklmnopqrstuvwxyz0123456789", 5));
+// randStringArray(10);
     }
 }
